@@ -6,9 +6,9 @@ WordPress theme placeholder for the OTV Agency relaunch at [otv.agency](https://
 
 Static preview for sharing with clients: see **[CLIENT-PREVIEW.md](CLIENT-PREVIEW.md)**.
 
-After push + Pages setup, the live URL will be:
+After push + Pages setup, the live URL is:
 
-`https://YOUR-GITHUB-USERNAME.github.io/otv-agency-preview/`
+`https://otvagency.github.io/otv-agency-preview/`
 
 Local preview: `python3 -m http.server 8899` → [preview.html](preview.html) or [index.html](index.html).
 

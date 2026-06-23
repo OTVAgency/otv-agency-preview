@@ -2,43 +2,19 @@
 
 Shareable static preview of the OTV Agency relaunch landing page — no local server required.
 
-## Live URL (after setup)
+## Live URL
 
 ```
-https://YOUR-GITHUB-USERNAME.github.io/otv-agency-preview/
+https://otvagency.github.io/otv-agency-preview/
 ```
 
-Replace `YOUR-GITHUB-USERNAME` with your GitHub user or org (e.g. `otv-agency` → `https://otv-agency.github.io/otv-agency-preview/`).
+Repo: [github.com/OTVAgency/otv-agency-preview](https://github.com/OTVAgency/otv-agency-preview)
 
-## One-time setup
+## One-time setup (already done)
 
-1. **Create a new GitHub repo**
-   - Name: `otv-agency-preview`
-   - Visibility: **Private** (recommended for client work) or Public
-   - Do **not** add a README, .gitignore, or license (this folder already has them)
-
-2. **Push this folder** (from Terminal):
-
-   ```bash
-   cd "02_Internal OTV/Website/OTV Agency Relaunch"
-
-   git init
-   git add .
-   git commit -m "Add OTV Agency relaunch client preview for GitHub Pages"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-GITHUB-USERNAME/otv-agency-preview.git
-   git push -u origin main
-   ```
-
-3. **Enable GitHub Pages**
-   - Repo → **Settings** → **Pages**
-   - **Build and deployment** → Source: **GitHub Actions**
-   - After the first push, the **Deploy client preview** workflow runs automatically
-   - When it finishes, the live URL appears under **Environments → github-pages**
-
-4. **Share with clients**
-   - Send the URL above
-   - Optional: add a custom subdomain later (e.g. `preview.otv.agency`) via a `CNAME` file and DNS
+1. Repo **OTVAgency/otv-agency-preview** on GitHub
+2. Push `main` branch with `index.html` at repo root
+3. **Settings → Pages →** Deploy from branch **main** / **/** (root)
 
 ## Updating the preview
 
