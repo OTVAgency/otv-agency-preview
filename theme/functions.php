@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OTV_AGENCY_VERSION', '1.0.0' );
+define( 'OTV_AGENCY_VERSION', '1.0.1' );
 define( 'OTV_AGENCY_INTAKE_FORM', 'https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L' );
 
 /**

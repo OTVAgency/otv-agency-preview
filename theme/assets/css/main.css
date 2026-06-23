@@ -267,6 +267,10 @@ a:hover { color: var(--navy-deep); }
   transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   overflow: hidden;
 }
+.service-card::before {
+  content: none;
+  display: none;
+}
 .service-card::after {
   content: "";
   position: absolute;
