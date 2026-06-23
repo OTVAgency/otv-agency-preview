@@ -10,7 +10,7 @@ After push + Pages setup, the live URL is:
 
 `https://otvagency.github.io/otv-agency-preview/`
 
-Local preview: `python3 -m http.server 8899` → [preview.html](preview.html) or [index.html](index.html).
+Local preview: `python3 -m http.server 8899` → [index.html](index.html) or [intake.html](intake.html).
 
 ## What's included
 
@@ -51,7 +51,8 @@ theme/
 1. Zip the `theme/` folder or upload it to `wp-content/themes/otv-agency/`
 2. In **Appearance → Themes**, activate **OTV Agency**
 3. Create a page titled **Home**
-4. Go to **Settings → Reading** → set **Your homepage displays** to **A static page** → select Home
+4. Create a page titled **Intake** with slug `intake` (uses `page-intake.php` automatically)
+5. Go to **Settings → Reading** → set **Your homepage displays** to **A static page** → select Home
 5. The theme uses `front-page.php` (classic) or `templates/front-page.html` (block editor) for the homepage
 
 ## Placeholder URLs to fill in
@@ -60,7 +61,7 @@ Replace these before going live:
 
 | Item | Where to update |
 |---|---|
-| JotForm intake embed | `theme/patterns/contact.php` → `#jotform-embed` block |
+| ClickUp intake form | `theme/patterns/intake-page.php` — create WordPress page slug **intake** |
 | Calendly link | `theme/patterns/hero.php` → primary CTA href |
 | Social profiles | `theme/patterns/footer.php` (add links when ready) |
 | Portfolio screenshots | Already included as PNGs in `theme/assets/images/portfolio/`. Replace or add `cmc`, `honey-sweet`, `jdprint`, `cay-custom`, `friendly-city`, or `bomb-effect` files (`.png`, `.jpg`, or `.webp`) to update. |

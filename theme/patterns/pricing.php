@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<li><?php esc_html_e( 'Launch-ready web presence', 'otv-agency' ); ?></li>
 					<li><?php esc_html_e( 'Mobile-first design', 'otv-agency' ); ?></li>
 				</ul>
-				<a href="#contact" class="btn btn-secondary"><?php esc_html_e( 'Get Started', 'otv-agency' ); ?></a>
+				<a href="<?php echo esc_url( $intake_url ); ?>" class="btn btn-secondary"><?php esc_html_e( 'Get Started', 'otv-agency' ); ?></a>
 			</article>
 			<article class="pricing-card pricing-card--featured">
 				<p class="pricing-badge"><?php esc_html_e( 'Most popular', 'otv-agency' ); ?></p>
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<li><?php esc_html_e( 'Conversion-focused copy structure', 'otv-agency' ); ?></li>
 					<li><?php esc_html_e( 'CMS you can update yourself', 'otv-agency' ); ?></li>
 				</ul>
-				<a href="#contact" class="btn btn-primary"><?php esc_html_e( 'Get Started', 'otv-agency' ); ?></a>
+				<a href="<?php echo esc_url( $intake_url ); ?>" class="btn btn-primary"><?php esc_html_e( 'Get Started', 'otv-agency' ); ?></a>
 			</article>
 			<article class="pricing-card">
 				<p class="pricing-tier"><?php esc_html_e( 'Scale', 'otv-agency' ); ?></p>
@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<li><?php esc_html_e( 'Reels and stories support', 'otv-agency' ); ?></li>
 					<li><?php esc_html_e( 'Monthly performance review', 'otv-agency' ); ?></li>
 				</ul>
-				<a href="#contact" class="btn btn-secondary"><?php esc_html_e( 'Get Started', 'otv-agency' ); ?></a>
+				<a href="<?php echo esc_url( $intake_url ); ?>" class="btn btn-secondary"><?php esc_html_e( 'Get Started', 'otv-agency' ); ?></a>
 			</article>
 		</div>
 		<p class="pricing-note"><?php esc_html_e( 'Custom scopes available for e-commerce, automation, video, and multi-phase projects.', 'otv-agency' ); ?></p>

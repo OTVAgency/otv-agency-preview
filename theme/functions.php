@@ -10,6 +10,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'OTV_AGENCY_VERSION', '1.0.0' );
+define( 'OTV_AGENCY_INTAKE_FORM', 'https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L' );
+
+/**
+ * URL for the dedicated intake form page.
+ *
+ * @return string
+ */
+function otv_agency_intake_url() {
+	$page = get_page_by_path( 'intake' );
+	if ( $page instanceof WP_Post ) {
+		return get_permalink( $page );
+	}
+	return home_url( '/intake/' );
+}
+
+/**
+ * Anchor link to a homepage section.
+ *
+ * @param string $section Section id without hash.
+ * @return string
+ */
+function otv_agency_section_url( $section ) {
+	$section = ltrim( $section, '#' );
+	if ( is_front_page() ) {
+		return '#' . $section;
+	}
+	return home_url( '/#' . $section );
+}
 
 /**
  * Theme setup.
@@ -79,6 +107,14 @@ function otv_agency_enqueue_assets() {
 		OTV_AGENCY_VERSION,
 		true
 	);
+
+	wp_enqueue_script(
+		'clickup-forms-embed',
+		'https://app-cdn.clickup.com/assets/js/forms-embed/embed-form-v1.js',
+		array(),
+		null,
+		true
+	);
 }
 add_action( 'wp_enqueue_scripts', 'otv_agency_enqueue_assets' );
 
@@ -143,6 +179,8 @@ function otv_agency_render_pattern( $name ) {
 	}
 
 	$uri = get_template_directory_uri();
+	$home_url   = home_url( '/' );
+	$intake_url = otv_agency_intake_url();
 	include $path;
 }
 

@@ -13,7 +13,7 @@ Editable reference for all on-page text.
   - Label: Relaunch special
   - Headline: Logo + 3-page site bundle
   - Copy: Book your discovery call during our 2026 relaunch and save $500 on your first project.
-  - CTA: Claim this offer → `#contact`
+  - CTA: Claim this offer → `/intake/`
 
 ## Services
 
@@ -53,4 +53,4 @@ OTV Agency is the creative and systems studio of **On The Verge LLC**, founded b
 ## Contact
 
 - Email: cory@otv.agency
-- Intake: JotForm embed (replace in `theme/patterns/contact.php`)
+- Intake: [ClickUp form](https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L) on dedicated page `/intake/` (`intake.html` for static preview)

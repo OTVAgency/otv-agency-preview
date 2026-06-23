@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<h1><?php esc_html_e( 'Small-town heart, big-agency vision.', 'otv-agency' ); ?></h1>
 				<p class="hero-lede"><?php esc_html_e( 'We turn your content into customers — and install the systems that keep them coming back.', 'otv-agency' ); ?></p>
 				<div class="hero-actions">
-					<a href="#contact" class="btn btn-primary"><?php esc_html_e( 'Book a Discovery Call', 'otv-agency' ); ?></a>
+					<a href="<?php echo esc_url( $intake_url ); ?>" class="btn btn-primary"><?php esc_html_e( 'Book a Discovery Call', 'otv-agency' ); ?></a>
 					<a href="#work" class="btn btn-ghost"><?php esc_html_e( 'See Our Work', 'otv-agency' ); ?></a>
 				</div>
 				<p class="hero-badge"><?php esc_html_e( 'Relaunching 2026 — full portfolio coming soon', 'otv-agency' ); ?></p>
@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p class="hero-offer-label"><?php esc_html_e( 'Relaunch special', 'otv-agency' ); ?></p>
 				<p class="hero-offer-headline"><?php esc_html_e( 'Logo + 3-page site bundle', 'otv-agency' ); ?></p>
 				<p class="hero-offer-copy"><?php esc_html_e( 'Book your discovery call during our 2026 relaunch and save $500 on your first project.', 'otv-agency' ); ?></p>
-				<a href="#contact" class="btn btn-primary hero-offer-cta"><?php esc_html_e( 'Claim this offer', 'otv-agency' ); ?></a>
+				<a href="<?php echo esc_url( $intake_url ); ?>" class="btn btn-primary hero-offer-cta"><?php esc_html_e( 'Claim this offer', 'otv-agency' ); ?></a>
 			</aside>
 		</div>
 	</div>

@@ -26,7 +26,7 @@
   }
 
   var revealTargets = document.querySelectorAll(
-    '.section-intro, .service-card, .pricing-card, .work-card, .testimonial-inner, .about-copy, .contact-form-wrap'
+    '.section-intro, .service-card, .pricing-card, .work-card, .testimonial-inner, .about-copy, .contact-cta-inner, .intake-intro'
   );
 
   if ('IntersectionObserver' in window && revealTargets.length) {
