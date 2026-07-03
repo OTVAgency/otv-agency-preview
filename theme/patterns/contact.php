@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<p><?php esc_html_e( "Tell us about your project. We'll respond within one business day.", 'otv-agency' ); ?></p>
 		<div class="contact-actions">
 			<a href="<?php echo esc_url( $intake_url ); ?>" class="btn btn-primary"><?php esc_html_e( 'Start intake form', 'otv-agency' ); ?></a>
-			<a href="mailto:cory@otv.agency" class="contact-link"><?php esc_html_e( 'cory@otv.agency', 'otv-agency' ); ?></a>
+			<a href="mailto:info@otv.agency" class="contact-link"><?php esc_html_e( 'info@otv.agency', 'otv-agency' ); ?></a>
 		</div>
 	</div>
 </section>

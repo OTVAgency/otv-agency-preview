@@ -452,6 +452,7 @@ a:hover { color: var(--navy-deep); }
   background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
   border-bottom: 1px solid var(--cream-deep);
   transition: background 0.3s;
+  overflow: visible;
 }
 .work-card:hover .work-thumb {
   background: linear-gradient(180deg, #e4e0d6 0%, var(--white) 100%);
@@ -460,12 +461,19 @@ a:hover { color: var(--navy-deep); }
   display: block;
   width: auto;
   height: auto;
-  max-width: min(88%, 20rem);
-  max-height: 10rem;
+  max-width: min(82%, 18rem);
+  max-height: 8.5rem;
   object-fit: contain;
-  transition: transform 0.35s ease;
+  object-position: center;
 }
-.work-card:hover .work-thumb img { transform: scale(1.04); }
+.work-thumb--wide {
+  min-height: 15rem;
+  padding: 2.75rem 2.25rem;
+}
+.work-thumb--wide img {
+  max-width: min(90%, 16rem);
+  max-height: 7.5rem;
+}
 .work-thumb--dark { background: var(--charcoal); }
 .work-thumb-fallback {
   display: block;

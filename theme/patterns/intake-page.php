@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<p><?php esc_html_e( "Tell us about your project. We'll respond within one business day.", 'otv-agency' ); ?></p>
 		<p class="intake-alt">
 			<?php esc_html_e( 'Prefer email?', 'otv-agency' ); ?>
-			<a href="mailto:cory@otv.agency" class="contact-link">cory@otv.agency</a>
+			<a href="mailto:info@otv.agency" class="contact-link">info@otv.agency</a>
 		</p>
 	</div>
 	<div class="container">

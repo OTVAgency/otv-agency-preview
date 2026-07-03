@@ -34,11 +34,10 @@ Editable reference for all on-page text.
 ## Portfolio
 
 - Comfort Measures Consulting — Consulting — comfortmeasuresconsulting.com
-- Honey Sweet LLC — E-commerce — honeyssweetllc.com
-- JDPrint.Design — Print & Web — jdprint.design
+- Staunton Storm — E-commerce — stauntonstorm.com
+- 1188 — Coaching — teamee88.com
 - Collins Market — Retail — collinsmarketva.com
 - Friendly City Events — Events — friendlycityevents.com
-- Bomb Effect Hair — Beauty — bombeffecthair.com
 
 ## Testimonial
 
@@ -52,5 +51,5 @@ OTV Agency is the creative and systems studio of **On The Verge LLC**, founded b
 
 ## Contact
 
-- Email: cory@otv.agency
+- Email: info@otv.agency
 - Intake: [ClickUp form](https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L) on dedicated page `/intake/` (`intake.html` for static preview)

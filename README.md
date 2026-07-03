@@ -64,7 +64,7 @@ Replace these before going live:
 | ClickUp intake form | `theme/patterns/intake-page.php` — create WordPress page slug **intake** |
 | Calendly link | `theme/patterns/hero.php` → primary CTA href |
 | Social profiles | `theme/patterns/footer.php` (add links when ready) |
-| Portfolio screenshots | Already included as PNGs in `theme/assets/images/portfolio/`. Replace or add `cmc`, `honey-sweet`, `jdprint`, `cay-custom`, `friendly-city`, or `bomb-effect` files (`.png`, `.jpg`, or `.webp`) to update. |
+| Portfolio screenshots | Already included as PNGs in `theme/assets/images/portfolio/`. Replace or add `cmc`, `staunton-storm`, `1188`, `collins-market`, `friendly-city`, or other slug-named files (`.png`, `.jpg`, or `.webp`) to update. |
 
 Portfolio cards auto-detect screenshots when those files exist; otherwise gradient placeholders display.
 

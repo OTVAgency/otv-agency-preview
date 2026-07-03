@@ -19,18 +19,18 @@ $portfolio_items = array(
 		'url'   => 'https://comfortmeasuresconsulting.com/',
 	),
 	array(
-		'slug'  => 'honey-sweet',
-		'name'  => 'Honey Sweet LLC',
+		'slug'  => 'staunton-storm',
+		'name'  => 'Staunton Storm',
 		'tag'   => 'E-commerce',
 		'class' => 'work-thumb--2',
-		'url'   => 'https://www.honeyssweetllc.com/',
+		'url'   => 'https://stauntonstorm.com/',
 	),
 	array(
-		'slug'  => 'jdprint',
-		'name'  => 'JDPrint.Design',
-		'tag'   => 'Print & Web',
+		'slug'  => '1188',
+		'name'  => '1188',
+		'tag'   => 'Coaching',
 		'class' => 'work-thumb--3',
-		'url'   => 'https://jdprint.design/',
+		'url'   => 'https://teamee88.com/',
 	),
 	array(
 		'slug'  => 'collins-market',
@@ -45,13 +45,6 @@ $portfolio_items = array(
 		'tag'   => 'Events',
 		'class' => 'work-thumb--5',
 		'url'   => 'https://friendlycityevents.com/',
-	),
-	array(
-		'slug'  => 'bomb-effect',
-		'name'  => 'Bomb Effect Hair',
-		'tag'   => 'Beauty',
-		'class' => 'work-thumb--6',
-		'url'   => 'https://bombeffecthair.com/',
 	),
 );
 ?>
