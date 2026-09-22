@@ -18,8 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="hero-grain" aria-hidden="true"></div>
 	<div class="container hero-inner">
 		<div class="hero-grid">
+			<p class="hero-eyebrow"><?php esc_html_e( 'For local businesses, service providers & creators', 'otv-agency' ); ?></p>
 			<div class="hero-copy">
-				<p class="hero-eyebrow"><?php esc_html_e( 'For local businesses, service providers & creators', 'otv-agency' ); ?></p>
 				<h1><?php esc_html_e( 'Creative work and systems that turn content into customers.', 'otv-agency' ); ?></h1>
 				<p class="hero-lede"><?php esc_html_e( 'OTV Agency builds your web, social, video, and automation — so you grow bold and scale smart.', 'otv-agency' ); ?></p>
 				<div class="hero-actions">
