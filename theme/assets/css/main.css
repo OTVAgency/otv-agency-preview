@@ -891,11 +891,10 @@ a:focus-visible,
 }
 .footer-brand img {
   display: block;
-  height: 7.5rem;
-  width: auto;
+  width: 4.75rem;
+  height: auto;
   max-width: none;
-  margin: 0 auto calc(-7.5rem * 0.36 + 0.85rem);
-  clip-path: inset(0 0 36% 0);
+  margin: 0 auto 0.85rem;
   filter: none;
   opacity: 1;
 }
