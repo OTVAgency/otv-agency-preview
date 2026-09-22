@@ -20,9 +20,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<img src="<?php echo esc_url( $uri ); ?>/assets/images/portfolio/logos/collins-market.png" alt="<?php esc_attr_e( 'Collins Market', 'otv-agency' ); ?>" loading="lazy">
 			<img src="<?php echo esc_url( $uri ); ?>/assets/images/portfolio/logos/friendly-city.png" alt="<?php esc_attr_e( 'Friendly City Events', 'otv-agency' ); ?>" loading="lazy">
 		</div>
-		<blockquote class="proof-quote">
-			<p>&ldquo;<?php esc_html_e( 'OTV Agency is the way to go — a marketing and communication powerhouse built for businesses ready to scale.', 'otv-agency' ); ?>&rdquo;</p>
-			<cite><?php esc_html_e( 'Norman Harris, Comfort Measures Consulting', 'otv-agency' ); ?></cite>
-		</blockquote>
 	</div>
 </section>

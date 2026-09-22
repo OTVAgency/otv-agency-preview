@@ -16,6 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h2><?php esc_html_e( 'Clear starting points. Custom scopes welcome.', 'otv-agency' ); ?></h2>
 			<p><?php esc_html_e( 'Every project begins with a free discovery call.', 'otv-agency' ); ?></p>
 		</div>
+		<article class="pricing-card pricing-offer" id="new-client-offer">
+			<p class="pricing-tier"><?php esc_html_e( 'New client offer', 'otv-agency' ); ?></p>
+			<h3><?php esc_html_e( 'Logo + 3-page site bundle', 'otv-agency' ); ?></h3>
+			<p class="pricing-offer-copy"><?php esc_html_e( 'Book your discovery call and save $500 on your first project.', 'otv-agency' ); ?></p>
+			<a href="<?php echo esc_url( $intake_url ); ?>" class="btn btn-primary"><?php esc_html_e( 'Claim this offer', 'otv-agency' ); ?></a>
+		</article>
 		<div class="pricing-grid">
 			<article class="pricing-card">
 				<p class="pricing-tier"><?php esc_html_e( 'Starter', 'otv-agency' ); ?></p>
