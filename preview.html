@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="theme/assets/css/main.css?v=20260922m">
+  <link rel="stylesheet" href="theme/assets/css/main.css?v=20260922n">
 </head>
 <body class="is-editing">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -144,18 +144,24 @@
     </section>
 
     <section class="section testimonial">
-      <div class="container testimonial-row">
-        <div class="testimonial-inner">
-          <img class="photo-frame" src="theme/assets/images/people/norman-harris.jpg" alt="Norman Harris">
-          <blockquote>
-            <p>&ldquo;OTV Agency is the way to go… it's been my secret weapon… a marketing and communication powerhouse built for smaller businesses just getting started or businesses ready to scale.&rdquo;</p>
-            <cite><strong>Norman Harris</strong><span>Founder, Comfort Measures Consulting</span></cite>
+      <div class="container">
+        <div class="testimonial-row" tabindex="0" role="region" aria-label="Client quotes">
+          <div class="testimonial-inner">
+            <img class="photo-frame" src="theme/assets/images/people/norman-harris.jpg" alt="Norman Harris">
+            <blockquote>
+              <p>&ldquo;OTV Agency is the way to go… it's been my secret weapon… a marketing and communication powerhouse built for smaller businesses just getting started or businesses ready to scale.&rdquo;</p>
+              <cite><strong>Norman Harris</strong><span>Founder, Comfort Measures Consulting</span></cite>
+            </blockquote>
+          </div>
+          <blockquote class="testimonial-quote">
+            <p>&ldquo;Thank you so much for the update, it’s looking great! I love it!&rdquo;</p>
+            <cite><strong>Kenay Sykes</strong><span>Life Coach, Eleven Eleven Eighty Eight (1188)</span></cite>
+          </blockquote>
+          <blockquote class="testimonial-quote">
+            <p>&ldquo;I’m so excited to partner even closer with you on this.&rdquo;</p>
+            <cite><strong>Jennifer Eddings</strong></cite>
           </blockquote>
         </div>
-        <blockquote class="testimonial-quote testimonial-quote--kenay">
-          <p>&ldquo;Thank you so much for the update, it’s looking great! I love it!&rdquo;</p>
-          <cite><strong>Kenay Sykes</strong><span>Life Coach, Eleven Eleven Eighty Eight (1188)</span></cite>
-        </blockquote>
       </div>
     </section>
 
@@ -260,5 +266,27 @@
 
   <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/embed-form-v1.js"></script>
   <script src="theme/assets/js/main.js?v=20260922b"></script>
+  <script>
+    (function () {
+      var row = document.querySelector('.testimonial-row');
+      if (!row) return;
+      function step() {
+        var card = row.querySelector('.testimonial-inner, .testimonial-quote');
+        var gap = parseFloat(getComputedStyle(row).columnGap || getComputedStyle(row).gap) || 0;
+        return (card ? card.getBoundingClientRect().width : row.clientWidth) + gap;
+      }
+      row.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+        row.scrollBy({ left: event.key === 'ArrowRight' ? step() : -step(), behavior: 'smooth' });
+        event.preventDefault();
+      });
+      row.addEventListener('wheel', function (event) {
+        if (row.scrollWidth <= row.clientWidth + 1) return;
+        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+        row.scrollLeft += event.deltaY;
+        event.preventDefault();
+      }, { passive: false });
+    })();
+  </script>
 </body>
 </html>
