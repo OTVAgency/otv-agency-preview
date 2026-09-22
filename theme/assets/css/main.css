@@ -249,8 +249,19 @@ a:focus-visible,
 .is-editing .proof-strip {
   margin-top: 0;
   margin-bottom: 4.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.25rem;
+}
+.is-editing .proof-strip-label {
+  font-size: 0.8125rem;
+  margin-bottom: 1.75rem;
+}
+.is-editing .proof-logos {
+  gap: 2.25rem 3rem;
+}
+.is-editing .proof-logos img {
+  height: 3.25rem;
+  max-width: 11rem;
 }
 .is-editing .proof-logos a {
   display: inline-flex;
@@ -918,10 +929,36 @@ a:focus-visible,
 .footer-meta p { margin: 0 0 0.5rem; font-size: 0.8125rem; }
 .footer-note { color: var(--muted); }
 
+/* Editing page footer: three equal columns. Homepage keeps the shared layout above. */
+.is-editing .footer-inner {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "brand nav meta";
+  align-items: start;
+}
+.is-editing .footer-brand,
+.is-editing .footer-nav,
+.is-editing .footer-meta {
+  width: 100%;
+  text-align: center;
+}
+.is-editing .footer-nav {
+  align-items: center;
+}
+.is-editing .footer-meta .hero-badge {
+  margin-bottom: 0.75rem;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .about-grid, .contact-grid, .footer-inner { grid-template-columns: 1fr; }
   .footer-inner {
+    grid-template-areas:
+      "brand"
+      "nav"
+      "meta";
+  }
+  .is-editing .footer-inner {
+    grid-template-columns: 1fr;
     grid-template-areas:
       "brand"
       "nav"
