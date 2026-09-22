@@ -995,28 +995,29 @@ a:focus-visible,
   font-weight: 600;
 }
 .is-editing .photo-frame {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 8.75rem;
   height: 11rem;
-  padding: 0.75rem;
-  border: 2px dashed rgba(12, 110, 132, 0.55);
+  object-fit: cover;
+  object-position: center center;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--muted);
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.35;
-  text-align: center;
+  border: 1px solid rgba(72, 208, 232, 0.55);
 }
 .is-editing .testimonial .photo-frame {
   position: relative;
   z-index: 1;
   margin: 0 auto 1.5rem;
 }
-.is-editing .about-media .photo-frame {
+.is-editing .about-media img.photo-frame {
+  width: 100%;
+  max-width: 28rem;
+  height: 16rem;
   margin: 0 0 1rem;
+  padding: 0;
+  transform: none;
+  filter: none;
+  object-fit: cover;
+  object-position: center center;
 }
 .is-editing .site-footer .hero-badge {
   margin: 0 0 0.75rem;
