@@ -6,8 +6,8 @@
 		"color": {
 			"palette": [
 				{ "slug": "black", "color": "#0b0d0f", "name": "Black" },
-				{ "slug": "charcoal", "color": "#14181c", "name": "Charcoal" },
-				{ "slug": "surface", "color": "#1a1f24", "name": "Surface" },
+				{ "slug": "charcoal", "color": "#181d22", "name": "Charcoal" },
+				{ "slug": "surface", "color": "#1f252b", "name": "Surface" },
 				{ "slug": "muted", "color": "#8b939a", "name": "Muted" },
 				{ "slug": "muted-light", "color": "#a8b4bc", "name": "Muted Light" },
 				{ "slug": "cream", "color": "#e8eef2", "name": "Cream" },

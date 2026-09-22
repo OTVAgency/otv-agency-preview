@@ -1,8 +1,8 @@
 :root {
   /* OTV brand — dark + cyan (logo glow) */
   --black: #0b0d0f;
-  --charcoal: #14181c;
-  --surface: #1a1f24;
+  --charcoal: #181d22;
+  --surface: #1f252b;
   --muted: #8b939a;
   --muted-light: #a8b4bc;
   --cream: #e8eef2;
@@ -118,20 +118,20 @@ a:focus-visible,
 }
 .hero-media img {
   width: 100%; height: 100%; object-fit: cover;
-  filter: saturate(0.2) contrast(1.1) brightness(0.45);
+  filter: saturate(0.32) contrast(1.05) brightness(0.62);
 }
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(
     115deg,
-    rgba(11, 13, 15, 0.9) 0%,
-    rgba(20, 24, 28, 0.72) 42%,
-    rgba(11, 13, 15, 0.88) 100%
+    rgba(11, 13, 15, 0.58) 0%,
+    rgba(20, 24, 28, 0.38) 42%,
+    rgba(11, 13, 15, 0.52) 100%
   );
 }
 .hero-grain {
   position: absolute; inset: 0; z-index: 2;
-  opacity: 0.18;
+  opacity: 0.12;
   mix-blend-mode: soft-light;
   pointer-events: none;
   background-image: var(--grain);
@@ -140,11 +140,13 @@ a:focus-visible,
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 26rem);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
+  column-gap: clamp(2rem, 5vw, 4rem);
+  row-gap: 1rem;
+  align-items: start;
 }
 .hero-eyebrow {
-  margin: 0 0 1rem;
+  grid-column: 1 / -1;
+  margin: 0;
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -152,12 +154,19 @@ a:focus-visible,
   color: var(--cyan);
 }
 .hero-offer {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: start;
   padding: 1.75rem 1.75rem 1.5rem;
   border-radius: var(--radius-md);
   border: 1px solid rgba(72, 208, 232, 0.35);
-  background: rgba(26, 31, 36, 0.75);
+  background: rgba(31, 37, 43, 0.72);
   backdrop-filter: blur(14px);
-  box-shadow: var(--glow-cyan), 0 24px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--glow-cyan), 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+.hero-copy {
+  grid-row: 2;
+  grid-column: 1;
 }
 .hero-offer-label {
   margin: 0 0 0.75rem;
@@ -196,7 +205,7 @@ a:focus-visible,
 /* Proof strip */
 .proof-strip {
   padding: 2.5rem 0;
-  background: var(--charcoal);
+  background: linear-gradient(180deg, #1c2228 0%, var(--charcoal) 100%);
   border-bottom: 1px solid rgba(72, 208, 232, 0.1);
 }
 .proof-strip-inner { text-align: center; }
@@ -334,14 +343,14 @@ a:focus-visible,
 
 /* Services — dark cinematic band */
 .services {
-  background: linear-gradient(165deg, var(--surface) 0%, var(--charcoal) 55%, var(--black) 100%);
+  background: linear-gradient(165deg, #232a31 0%, var(--charcoal) 55%, #12161a 100%);
   color: var(--white);
 }
 .services::after {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.14;
+  opacity: 0.1;
   mix-blend-mode: soft-light;
   pointer-events: none;
   background-image: var(--grain);
@@ -358,8 +367,8 @@ a:focus-visible,
   position: relative;
   padding: 2rem 2rem 1.75rem 2.25rem;
   border-radius: var(--radius-md);
-  background: rgba(26, 31, 36, 0.55);
-  border: 1px solid rgba(72, 208, 232, 0.1);
+  background: rgba(31, 37, 43, 0.62);
+  border: 1px solid rgba(72, 208, 232, 0.12);
   backdrop-filter: blur(10px);
   transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   overflow: hidden;
@@ -410,8 +419,8 @@ a:focus-visible,
 /* Pricing */
 .pricing {
   background:
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(72, 208, 232, 0.08), transparent 60%),
-    var(--charcoal);
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(72, 208, 232, 0.1), transparent 60%),
+    linear-gradient(180deg, #1c2228 0%, var(--charcoal) 100%);
 }
 .pricing-grid {
   display: grid;
@@ -520,7 +529,7 @@ a:focus-visible,
 
 /* Work — editorial grid */
 .work {
-  background: var(--black);
+  background: linear-gradient(180deg, #12161a 0%, var(--black) 100%);
 }
 .work::before {
   content: "";
@@ -853,7 +862,12 @@ a:focus-visible,
   .hero-inner { padding: 7rem 0 4rem; }
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    row-gap: 2rem;
+  }
+  .hero-copy,
+  .hero-offer {
+    grid-column: 1;
+    grid-row: auto;
   }
   .hero-offer { max-width: 22rem; margin: 0 auto; }
   .hero h1 { max-width: none; }
