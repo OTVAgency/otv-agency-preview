@@ -915,3 +915,114 @@ a:focus-visible,
     transition: none;
   }
 }
+
+/* Editing page only (preview.html). Homepage does not use .is-editing. */
+.is-editing .service-switcher { position: relative; }
+.is-editing .svc-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.is-editing .service-card { cursor: pointer; }
+.is-editing #svc-web:checked ~ .services-grid label[for="svc-web"],
+.is-editing #svc-social:checked ~ .services-grid label[for="svc-social"],
+.is-editing #svc-video:checked ~ .services-grid label[for="svc-video"],
+.is-editing #svc-automation:checked ~ .services-grid label[for="svc-automation"],
+.is-editing #svc-creative:checked ~ .services-grid label[for="svc-creative"],
+.is-editing #svc-print:checked ~ .services-grid label[for="svc-print"] {
+  background: #ffffff;
+  border-color: var(--cyan);
+  box-shadow: var(--glow-cyan), 0 18px 40px rgba(21, 32, 38, 0.08);
+}
+.is-editing #svc-web:focus-visible ~ .services-grid label[for="svc-web"],
+.is-editing #svc-social:focus-visible ~ .services-grid label[for="svc-social"],
+.is-editing #svc-video:focus-visible ~ .services-grid label[for="svc-video"],
+.is-editing #svc-automation:focus-visible ~ .services-grid label[for="svc-automation"],
+.is-editing #svc-creative:focus-visible ~ .services-grid label[for="svc-creative"],
+.is-editing #svc-print:focus-visible ~ .services-grid label[for="svc-print"] {
+  outline: 2px solid var(--cyan-ink);
+  outline-offset: 3px;
+}
+.is-editing .service-example {
+  display: none;
+  grid-template-columns: minmax(7rem, 16rem) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(72, 208, 232, 0.55);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.is-editing #svc-web:checked ~ .service-example--web,
+.is-editing #svc-social:checked ~ .service-example--social,
+.is-editing #svc-video:checked ~ .service-example--video,
+.is-editing #svc-automation:checked ~ .service-example--automation,
+.is-editing #svc-creative:checked ~ .service-example--creative,
+.is-editing #svc-print:checked ~ .service-example--print {
+  display: grid;
+}
+.is-editing .service-example img {
+  width: 100%;
+  max-height: 11rem;
+  object-fit: contain;
+  background: var(--paper);
+  border-radius: var(--radius-sm, 8px);
+}
+.is-editing .service-example-name {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--ink);
+}
+.is-editing .service-example-tag {
+  margin: 0 0 0.75rem;
+  color: var(--cyan-ink);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.is-editing .service-example a {
+  color: var(--cyan-ink);
+  font-weight: 600;
+}
+.is-editing .photo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.75rem;
+  height: 11rem;
+  padding: 0.75rem;
+  border: 2px dashed rgba(12, 110, 132, 0.55);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+}
+.is-editing .testimonial .photo-frame {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 1.5rem;
+}
+.is-editing .about-media .photo-frame {
+  margin: 0 0 1rem;
+}
+.is-editing .site-footer .hero-badge {
+  margin: 0 0 0.75rem;
+}
+@media (max-width: 768px) {
+  .is-editing .service-example {
+    grid-template-columns: 1fr;
+  }
+}
