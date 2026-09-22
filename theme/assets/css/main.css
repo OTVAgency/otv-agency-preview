@@ -994,7 +994,8 @@ a:focus-visible,
   color: var(--cyan-ink);
   font-weight: 600;
 }
-.is-editing .photo-frame {
+.is-editing .photo-frame,
+.photo-frame {
   display: block;
   width: 8.75rem;
   height: 11rem;
@@ -1003,12 +1004,14 @@ a:focus-visible,
   border-radius: var(--radius-md);
   border: 1px solid rgba(72, 208, 232, 0.55);
 }
-.is-editing .testimonial .photo-frame {
+.is-editing .testimonial .photo-frame,
+.testimonial .photo-frame {
   position: relative;
   z-index: 1;
   margin: 0 auto 1.5rem;
 }
-.is-editing .about-media img.photo-frame {
+.is-editing .about-media img.photo-frame,
+.about-media img.photo-frame {
   width: 100%;
   max-width: 28rem;
   height: 16rem;
