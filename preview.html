@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="theme/assets/css/main.css?v=20260922d">
+  <link rel="stylesheet" href="theme/assets/css/main.css?v=20260922e">
 </head>
 <body class="is-editing">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -48,25 +48,11 @@
               <a href="intake.html" class="btn btn-primary">Book a Discovery Call</a>
               <a href="mailto:info@otv.agency" class="btn btn-ghost">info@otv.agency</a>
             </div>
-            <p class="hero-badge">Remote-friendly · Nationwide</p>
           </div>
           <aside class="hero-offer" aria-label="Special offer">
             <p class="hero-offer-label">New client offer</p>
             <a href="#pricing" class="btn btn-primary hero-offer-cta">Claim this offer</a>
           </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="proof-strip" aria-label="Trusted by">
-      <div class="container proof-strip-inner">
-        <p class="proof-strip-label">Trusted by growing brands</p>
-        <div class="proof-logos">
-          <img src="theme/assets/images/portfolio/logos/cmc.png" alt="Comfort Measures Consulting" loading="lazy">
-          <img src="theme/assets/images/portfolio/logos/staunton-storm.png" alt="Staunton Storm" loading="lazy">
-          <img src="theme/assets/images/portfolio/logos/1188.png" alt="1188" loading="lazy">
-          <img src="theme/assets/images/portfolio/logos/collins-market.png" alt="Collins Market" loading="lazy">
-          <img src="theme/assets/images/portfolio/logos/friendly-city.png" alt="Friendly City Events" loading="lazy">
         </div>
       </div>
     </section>
@@ -77,43 +63,92 @@
           <p class="section-label">What We Do</p>
           <h2>Creative work and systems, under one roof.</h2>
         </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>Web &amp; E-commerce</h3>
-            <p>WordPress and WooCommerce sites built to convert, plus ongoing care plans to keep you running.</p>
-            <a href="intake.html" class="service-cta">Start a project →</a>
-          </article>
-          <article class="service-card">
-            <h3>Social &amp; Content</h3>
-            <p>Retainers, reels, stories, and analytics that turn attention into leads.</p>
-            <a href="intake.html" class="service-cta">Start a project →</a>
-          </article>
-          <article class="service-card">
-            <h3>Video &amp; Podcast</h3>
-            <p>Clipping packages, thumbnails, captions, and production support for your show.</p>
-            <a href="intake.html" class="service-cta">Start a project →</a>
-          </article>
-          <article class="service-card">
-            <h3>Automation &amp; Ops</h3>
-            <p>HoneyBook, JotForm, ClickUp, and Google Workspace setups that save you hours.</p>
-            <a href="intake.html" class="service-cta">Start a project →</a>
-          </article>
-          <article class="service-card">
-            <h3>Creative &amp; Brand</h3>
-            <p>Logos, brand boards, and visual identity that look as good as they perform.</p>
-            <a href="intake.html" class="service-cta">Start a project →</a>
-          </article>
-          <article class="service-card">
-            <h3>Print &amp; Merch</h3>
-            <p>Apparel, print production, and fulfillment for brands that show up offline too.</p>
-            <a href="intake.html" class="service-cta">Start a project →</a>
-          </article>
+        <div class="service-switcher">
+          <input class="svc-input" type="radio" name="service-example" id="svc-web" checked>
+          <input class="svc-input" type="radio" name="service-example" id="svc-social">
+          <input class="svc-input" type="radio" name="service-example" id="svc-video">
+          <input class="svc-input" type="radio" name="service-example" id="svc-automation">
+          <input class="svc-input" type="radio" name="service-example" id="svc-creative">
+          <input class="svc-input" type="radio" name="service-example" id="svc-print">
+          <div class="services-grid">
+            <label for="svc-web" class="service-card">
+              <h3 id="svc-web-title">Web &amp; E-commerce</h3>
+              <p>WordPress and WooCommerce sites built to convert, plus ongoing care plans to keep you running.</p>
+            </label>
+            <label for="svc-social" class="service-card">
+              <h3 id="svc-social-title">Social &amp; Content</h3>
+              <p>Retainers, reels, stories, and analytics that turn attention into leads.</p>
+            </label>
+            <label for="svc-video" class="service-card">
+              <h3 id="svc-video-title">Video &amp; Podcast</h3>
+              <p>Clipping packages, thumbnails, captions, and production support for your show.</p>
+            </label>
+            <label for="svc-automation" class="service-card">
+              <h3 id="svc-automation-title">Automation &amp; Ops</h3>
+              <p>HoneyBook, JotForm, ClickUp, and Google Workspace setups that save you hours.</p>
+            </label>
+            <label for="svc-creative" class="service-card">
+              <h3 id="svc-creative-title">Creative &amp; Brand</h3>
+              <p>Logos, brand boards, and visual identity that look as good as they perform.</p>
+            </label>
+            <label for="svc-print" class="service-card">
+              <h3 id="svc-print-title">Print &amp; Merch</h3>
+              <p>Apparel, print production, and fulfillment for brands that show up offline too.</p>
+            </label>
+          </div>
+          <div class="service-example service-example--web" role="region" aria-labelledby="svc-web-title">
+            <img src="theme/assets/images/portfolio/logos/staunton-storm.png" alt="Staunton Storm logo">
+            <div>
+              <p class="service-example-name">Staunton Storm</p>
+              <p class="service-example-tag">E-commerce</p>
+              <a href="https://stauntonstorm.com/" target="_blank" rel="noopener">stauntonstorm.com</a>
+            </div>
+          </div>
+          <div class="service-example service-example--social" role="region" aria-labelledby="svc-social-title">
+            <img src="theme/assets/images/portfolio/logos/1188.png" alt="1188 logo">
+            <div>
+              <p class="service-example-name">1188</p>
+              <p class="service-example-tag">Coaching</p>
+              <a href="https://teamee88.com/" target="_blank" rel="noopener">teamee88.com</a>
+            </div>
+          </div>
+          <div class="service-example service-example--video" role="region" aria-labelledby="svc-video-title">
+            <img src="theme/assets/images/portfolio/logos/friendly-city.png" alt="Friendly City Events logo">
+            <div>
+              <p class="service-example-name">Friendly City Events</p>
+              <p class="service-example-tag">Events</p>
+              <a href="https://friendlycityevents.com/" target="_blank" rel="noopener">friendlycityevents.com</a>
+            </div>
+          </div>
+          <div class="service-example service-example--automation" role="region" aria-labelledby="svc-automation-title">
+            <img src="theme/assets/images/portfolio/logos/cmc.png" alt="Comfort Measures Consulting logo">
+            <div>
+              <p class="service-example-name">Comfort Measures Consulting</p>
+              <p class="service-example-tag">Consulting</p>
+              <a href="https://comfortmeasuresconsulting.com/" target="_blank" rel="noopener">comfortmeasuresconsulting.com</a>
+            </div>
+          </div>
+          <div class="service-example service-example--creative" role="region" aria-labelledby="svc-creative-title">
+            <img src="theme/assets/images/portfolio/logos/collins-market.png" alt="Collins Market logo">
+            <div>
+              <p class="service-example-name">Collins Market</p>
+              <p class="service-example-tag">Retail</p>
+              <a href="https://collinsmarketva.com/" target="_blank" rel="noopener">collinsmarketva.com</a>
+            </div>
+          </div>
+          <div class="service-example service-example--print" role="region" aria-labelledby="svc-print-title">
+            <img src="theme/assets/images/portfolio/jdprint.png" alt="JD Print">
+            <div>
+              <p class="service-example-name">JD Print</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section testimonial">
       <div class="container testimonial-inner">
+        <div class="photo-frame" role="img" aria-label="Norman Harris">Norman Harris</div>
         <blockquote>
           <p>&ldquo;OTV Agency is the way to go… it's been my secret weapon… a marketing and communication powerhouse built for smaller businesses just getting started or businesses ready to scale.&rdquo;</p>
           <cite><strong>Norman Harris</strong><span>Founder, Comfort Measures Consulting</span></cite>
@@ -131,14 +166,13 @@
         <article class="pricing-card pricing-offer" id="new-client-offer">
           <p class="pricing-tier">New client offer</p>
           <h3>Logo + 3-page site bundle</h3>
-          <p class="pricing-offer-copy">Book your discovery call and save $500 on your first project.</p>
+          <p class="pricing-offer-copy">Book your discovery call.</p>
           <a href="intake.html" class="btn btn-primary">Claim this offer</a>
         </article>
         <div class="pricing-grid">
           <article class="pricing-card">
             <p class="pricing-tier">Starter</p>
             <h3>Web &amp; Logo</h3>
-            <p class="pricing-amount">From $1,500</p>
             <ul><li>Brand-ready logo</li><li>Launch-ready web presence</li><li>Mobile-first design</li></ul>
             <a href="intake.html" class="btn btn-secondary">Get Started</a>
           </article>
@@ -146,14 +180,12 @@
             <p class="pricing-badge">Most popular</p>
             <p class="pricing-tier">Growth</p>
             <h3>5-Page Site</h3>
-            <p class="pricing-amount">From $3,000</p>
             <ul><li>Full site architecture</li><li>Conversion-focused copy structure</li><li>CMS you can update yourself</li></ul>
             <a href="intake.html" class="btn btn-primary">Get Started</a>
           </article>
           <article class="pricing-card">
             <p class="pricing-tier">Scale</p>
             <h3>Social Retainer</h3>
-            <p class="pricing-amount">From $600/mo</p>
             <ul><li>Content planning &amp; posting</li><li>Reels and stories support</li><li>Monthly performance review</li></ul>
             <a href="intake.html" class="btn btn-secondary">Get Started</a>
           </article>
@@ -165,6 +197,7 @@
     <section id="about" class="section about">
       <div class="container about-grid">
         <div class="about-media">
+          <div class="photo-frame" role="img" aria-label="Cory Crawford">Cory Crawford</div>
           <img src="theme/assets/images/about-studio.jpg" alt="Creative workspace at OTV Agency">
         </div>
         <div class="about-copy">
@@ -187,6 +220,19 @@
         </div>
       </div>
     </section>
+
+    <section class="proof-strip" aria-label="Trusted by">
+      <div class="container proof-strip-inner">
+        <p class="proof-strip-label">Trusted by growing brands</p>
+        <div class="proof-logos">
+          <img src="theme/assets/images/portfolio/logos/cmc.png" alt="Comfort Measures Consulting" loading="lazy">
+          <img src="theme/assets/images/portfolio/logos/staunton-storm.png" alt="Staunton Storm" loading="lazy">
+          <img src="theme/assets/images/portfolio/logos/1188.png" alt="1188" loading="lazy">
+          <img src="theme/assets/images/portfolio/logos/collins-market.png" alt="Collins Market" loading="lazy">
+          <img src="theme/assets/images/portfolio/logos/friendly-city.png" alt="Friendly City Events" loading="lazy">
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -202,6 +248,7 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer-meta">
+        <p class="hero-badge">Remote-friendly · Nationwide</p>
         <p>&copy; 2026 On The Verge LLC d/b/a OTV Agency. All rights reserved.</p>
         <p class="footer-note">Serving clients nationwide from Hollywood, Florida.</p>
       </div>
