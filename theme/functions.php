@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OTV_AGENCY_VERSION', '1.0.1' );
+define( 'OTV_AGENCY_VERSION', '1.1.0' );
 define( 'OTV_AGENCY_INTAKE_FORM', 'https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L' );
 
 /**
@@ -214,6 +214,7 @@ function otv_agency_register_block_patterns() {
 	$patterns = array(
 		'header'      => __( 'Site Header', 'otv-agency' ),
 		'hero'        => __( 'Hero', 'otv-agency' ),
+		'proof-strip' => __( 'Proof Strip', 'otv-agency' ),
 		'services'    => __( 'Services Grid', 'otv-agency' ),
 		'pricing'     => __( 'Pricing Tiers', 'otv-agency' ),
 		'portfolio'   => __( 'Portfolio Grid', 'otv-agency' ),
