@@ -12,10 +12,11 @@ get_header();
 	<?php
 	$sections = array(
 		'hero',
+		'proof-strip',
 		'services',
+		'testimonial',
 		'pricing',
 		'portfolio',
-		'testimonial',
 		'about',
 		'contact',
 	);

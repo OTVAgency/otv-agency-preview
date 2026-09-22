@@ -5,18 +5,18 @@
 		"appearanceTools": true,
 		"color": {
 			"palette": [
-				{ "slug": "forest", "color": "#2e3830", "name": "Forest" },
-				{ "slug": "forest-deep", "color": "#1e261f", "name": "Forest Deep" },
-				{ "slug": "charcoal", "color": "#1a1a18", "name": "Charcoal" },
-				{ "slug": "black", "color": "#111110", "name": "Black" },
-				{ "slug": "stone", "color": "#7a7872", "name": "Stone" },
-				{ "slug": "muted", "color": "#6f736c", "name": "Muted" },
-				{ "slug": "muted-light", "color": "#a8aaa3", "name": "Muted Light" },
-				{ "slug": "cream", "color": "#ebe7df", "name": "Cream" },
-				{ "slug": "cream-deep", "color": "#ddd8cf", "name": "Cream Deep" },
-				{ "slug": "white", "color": "#f5f2ec", "name": "White" },
-				{ "slug": "navy", "color": "#2e3830", "name": "Forest (legacy alias)" },
-				{ "slug": "navy-deep", "color": "#1e261f", "name": "Forest Deep (legacy alias)" }
+				{ "slug": "black", "color": "#0b0d0f", "name": "Black" },
+				{ "slug": "charcoal", "color": "#14181c", "name": "Charcoal" },
+				{ "slug": "surface", "color": "#1a1f24", "name": "Surface" },
+				{ "slug": "muted", "color": "#8b939a", "name": "Muted" },
+				{ "slug": "muted-light", "color": "#a8b4bc", "name": "Muted Light" },
+				{ "slug": "cream", "color": "#e8eef2", "name": "Cream" },
+				{ "slug": "cream-deep", "color": "#232a30", "name": "Cream Deep" },
+				{ "slug": "white", "color": "#f7fafc", "name": "White" },
+				{ "slug": "cyan", "color": "#48d0e8", "name": "Cyan" },
+				{ "slug": "cyan-deep", "color": "#1ba8c4", "name": "Cyan Deep" },
+				{ "slug": "navy", "color": "#48d0e8", "name": "Cyan (legacy alias)" },
+				{ "slug": "navy-deep", "color": "#1ba8c4", "name": "Cyan Deep (legacy alias)" }
 			]
 		},
 		"layout": {
@@ -40,8 +40,8 @@
 	},
 	"styles": {
 		"color": {
-			"background": "var(--wp--preset--color--cream)",
-			"text": "var(--wp--preset--color--charcoal)"
+			"background": "var(--wp--preset--color--black)",
+			"text": "var(--wp--preset--color--cream)"
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--dm-sans)",

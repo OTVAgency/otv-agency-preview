@@ -4,16 +4,23 @@ Editable reference for all on-page text.
 
 ## Hero
 
-- **Headline:** Small-town heart, big-agency vision.
-- **Subhead:** We turn your content into customers — and install the systems that keep them coming back.
-- **CTA primary:** Book a Discovery Call
-- **CTA secondary:** See Our Work
-- **Badge:** Relaunching 2026 — full portfolio coming soon
+- **Eyebrow:** For local businesses, service providers & creators
+- **Headline:** Creative work and systems that turn content into customers.
+- **Subhead:** OTV Agency builds your web, social, video, and automation — so you grow bold and scale smart.
+- **CTA primary:** Book a Discovery Call → `/intake/`
+- **CTA secondary:** info@otv.agency
+- **Badge:** Remote-friendly · Nationwide
 - **Special offer (right column):**
-  - Label: Relaunch special
+  - Label: New client offer
   - Headline: Logo + 3-page site bundle
-  - Copy: Book your discovery call during our 2026 relaunch and save $500 on your first project.
+  - Copy: Book your discovery call and save $500 on your first project.
   - CTA: Claim this offer → `/intake/`
+
+## Proof strip
+
+- **Label:** Trusted by growing brands
+- **Logos:** CMC, Staunton Storm, 1188, Collins Market, Friendly City Events
+- **Quote:** "OTV Agency is the way to go — a marketing and communication powerhouse built for businesses ready to scale." — Norman Harris, Comfort Measures Consulting
 
 ## Services
 
@@ -23,6 +30,8 @@ Editable reference for all on-page text.
 4. **Automation & Ops** — HoneyBook, JotForm, ClickUp, and Google Workspace setups.
 5. **Creative & Brand** — Logos, brand boards, and visual identity.
 6. **Print & Merch** — Apparel, print production, and fulfillment.
+
+Each service card links to intake: **Start a project →**
 
 ## Pricing
 
@@ -53,3 +62,4 @@ OTV Agency is the creative and systems studio of **On The Verge LLC**, founded b
 
 - Email: info@otv.agency
 - Intake: [ClickUp form](https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L) on dedicated page `/intake/` (`intake.html` for static preview)
+- CTA: Book a Discovery Call
