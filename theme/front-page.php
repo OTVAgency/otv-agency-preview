@@ -16,7 +16,6 @@ get_header();
 		'services',
 		'testimonial',
 		'pricing',
-		'portfolio',
 		'about',
 		'contact',
 	);

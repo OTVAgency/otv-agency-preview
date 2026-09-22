@@ -124,7 +124,7 @@ add_action( 'wp_enqueue_scripts', 'otv_agency_enqueue_assets' );
 function otv_agency_favicon() {
 	$uri = get_template_directory_uri();
 	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon.svg' ) . '" type="image/svg+xml">' . "\n";
-	echo '<meta name="description" content="' . esc_attr__( 'OTV Agency — boutique creative and systems studio. Web, social, video, automation, and print for businesses ready to grow bold and scale smart.', 'otv-agency' ) . '">' . "\n";
+	echo '<meta name="description" content="' . esc_attr__( 'OTV Agency — creative work and systems that turn content into customers.', 'otv-agency' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'otv_agency_favicon', 1 );
 

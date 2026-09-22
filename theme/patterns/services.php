@@ -15,7 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="section-intro">
 			<p class="section-label"><?php esc_html_e( 'What We Do', 'otv-agency' ); ?></p>
 			<h2><?php esc_html_e( 'Creative work and systems, under one roof.', 'otv-agency' ); ?></h2>
-			<p><?php esc_html_e( 'From first impression to follow-up automation — we help you grow bold and scale smart.', 'otv-agency' ); ?></p>
 		</div>
 		<div class="services-grid">
 			<article class="service-card">
