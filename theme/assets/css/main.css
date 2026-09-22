@@ -1171,6 +1171,24 @@ a:focus-visible,
 .is-editing .site-footer .hero-badge {
   margin: 0 0 0.75rem;
 }
+.is-editing .testimonial-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem;
+  align-items: end;
+  max-width: 68rem;
+  margin-inline: auto;
+}
+.is-editing .testimonial-row .testimonial-inner {
+  max-width: none;
+  margin-inline: 0;
+}
+.is-editing .testimonial-quote--kenay {
+  margin: 0;
+  text-align: center;
+}
 @media (max-width: 768px) {
   .is-editing .service-switcher {
     grid-template-columns: 1fr;
@@ -1179,5 +1197,10 @@ a:focus-visible,
     grid-column: 1;
     grid-row: 2;
     grid-template-columns: 1fr;
+  }
+  .is-editing .testimonial-row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 2.5rem;
   }
 }
