@@ -1242,6 +1242,10 @@ a:focus-visible,
 .is-editing .testimonial-row .photo-frame {
   margin-bottom: 0.75rem;
 }
+.is-editing .testimonial-row .photo-frame--logo {
+  object-fit: contain;
+  background: #0a0a0a;
+}
 .is-editing .testimonial-row blockquote p {
   margin-bottom: 0.85rem;
 }
