@@ -993,7 +993,17 @@ a:focus-visible,
     grid-column: 1;
     grid-row: auto;
   }
-  .hero-offer { max-width: 22rem; margin: 0 auto; }
+  .hero-offer {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    justify-self: stretch;
+    padding: 1.35rem 1.15rem 1.2rem;
+  }
+  .hero-offer-cta {
+    padding-inline: 1rem;
+  }
   .hero h1 { max-width: none; }
   .section { padding: 4rem 0; }
   .proof-logos { gap: 1.5rem; }
