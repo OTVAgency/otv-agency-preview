@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="theme/assets/css/main.css?v=20260922o">
+  <link rel="stylesheet" href="theme/assets/css/main.css?v=20260922p">
 </head>
 <body class="is-editing">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -283,6 +283,7 @@
       var prev = document.querySelector('.testimonial-prev');
       var next = document.querySelector('.testimonial-next');
       var lock = false;
+      var current = 0;
 
       function cards() {
         return row.querySelectorAll('.testimonial-inner, .testimonial-quote');
@@ -292,27 +293,32 @@
         var gap = parseFloat(getComputedStyle(row).columnGap || getComputedStyle(row).gap) || 0;
         return (card ? card.getBoundingClientRect().width : row.clientWidth) + gap;
       }
-      function index() {
+      function nearest() {
         var size = step();
-        if (!size) return 0;
-        return Math.round(row.scrollLeft / size);
+        var list = cards();
+        if (!size || !list.length) return 0;
+        return Math.max(0, Math.min(list.length - 1, Math.round(row.scrollLeft / size)));
       }
       function go(dir) {
         var list = cards();
-        var i = Math.max(0, Math.min(list.length - 1, index() + dir));
-        var target = list[i];
+        current = Math.max(0, Math.min(list.length - 1, current + dir));
+        var target = list[current];
         if (!target) return;
         row.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+        updateButtons();
       }
       function updateButtons() {
         var list = cards();
-        var i = index();
-        if (prev) prev.disabled = i <= 0;
-        if (next) next.disabled = i >= list.length - 1;
+        if (prev) prev.disabled = current <= 0;
+        if (next) next.disabled = current >= list.length - 1;
       }
       if (prev) prev.addEventListener('click', function () { go(-1); });
       if (next) next.addEventListener('click', function () { go(1); });
-      row.addEventListener('scroll', updateButtons, { passive: true });
+      row.addEventListener('scrollend', function () {
+        current = nearest();
+        updateButtons();
+      });
+      current = nearest();
       updateButtons();
 
       document.addEventListener('keydown', function (event) {
