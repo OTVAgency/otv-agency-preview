@@ -318,16 +318,10 @@
       }
       function go(dir) {
         var list = cards();
-        current = Math.max(0, Math.min(list.length - 1, current + dir));
+        if (!list.length) return;
+        current = (current + dir + list.length) % list.length;
         var target = list[current];
-        if (!target) return;
         row.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
-        updateButtons();
-      }
-      function updateButtons() {
-        var list = cards();
-        if (prev) prev.disabled = current <= 0;
-        if (next) next.disabled = current >= list.length - 1;
       }
       var overRow = false;
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -339,14 +333,6 @@
       }
       function tick() {
         if (isPaused()) return;
-        var list = cards();
-        if (!list.length) return;
-        if (current >= list.length - 1) {
-          current = 0;
-          row.scrollTo({ left: list[0].offsetLeft, behavior: 'smooth' });
-          updateButtons();
-          return;
-        }
         go(1);
       }
       function restart() {
@@ -365,10 +351,8 @@
       restart();
       row.addEventListener('scrollend', function () {
         current = nearest();
-        updateButtons();
       });
       current = nearest();
-      updateButtons();
 
       document.addEventListener('keydown', function (event) {
         if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
