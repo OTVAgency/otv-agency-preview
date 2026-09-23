@@ -1169,7 +1169,9 @@ a:focus-visible,
   object-position: center center;
 }
 .is-editing .about-media img.photo-frame {
+  height: 22rem;
   margin-bottom: 0;
+  object-position: center top;
 }
 .is-editing .site-footer .hero-badge {
   margin: 0 0 0.75rem;
