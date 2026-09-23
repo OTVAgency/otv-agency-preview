@@ -1181,8 +1181,8 @@ a:focus-visible,
 .is-editing .testimonial-row {
   position: relative;
   display: flex;
-  align-items: stretch;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.75rem;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1193,7 +1193,7 @@ a:focus-visible,
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  padding-bottom: 0.85rem;
+  padding-bottom: 0.35rem;
   scrollbar-color: var(--cyan) transparent;
   scrollbar-width: thin;
 }
@@ -1213,9 +1213,9 @@ a:focus-visible,
 }
 .is-editing .testimonial-controls {
   display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  margin-top: 0.35rem;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 0.15rem;
 }
 .is-editing .testimonial-controls .btn {
   width: 3.25rem;
@@ -1239,12 +1239,22 @@ a:focus-visible,
   max-width: none;
   margin-inline: 0;
 }
+.is-editing .testimonial-row .photo-frame {
+  margin-bottom: 0.75rem;
+}
+.is-editing .testimonial-row blockquote p {
+  margin-bottom: 0.85rem;
+}
+.is-editing .testimonial-row cite {
+  gap: 0.1rem;
+}
 .is-editing .testimonial-quote {
   margin: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-block: 0.25rem;
 }
 @media (max-width: 768px) {
   .is-editing .testimonial-row > .testimonial-inner,
