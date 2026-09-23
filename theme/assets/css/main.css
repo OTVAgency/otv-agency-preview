@@ -469,6 +469,9 @@ a:focus-visible,
   max-width: 36rem;
   margin: 0 auto 1.75rem;
 }
+.is-editing .pricing-offer {
+  margin: 1.75rem auto 0;
+}
 .pricing-offer-copy {
   margin: 0 0 1.75rem;
   flex: 1;
