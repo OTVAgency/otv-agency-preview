@@ -1168,9 +1168,6 @@ a:focus-visible,
   object-fit: cover;
   object-position: center center;
 }
-.is-editing .about-media img.photo-frame {
-  object-position: center top;
-}
 .is-editing .site-footer .hero-badge {
   margin: 0 0 0.75rem;
 }
