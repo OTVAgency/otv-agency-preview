@@ -1217,6 +1217,16 @@ a:focus-visible,
   gap: 0.75rem;
   margin-top: 0.35rem;
 }
+.is-editing .testimonial-controls .btn {
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+}
+.is-editing .testimonial-controls svg {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+}
 .is-editing .testimonial-controls .btn[disabled],
 .is-editing .testimonial-controls .btn[disabled]:hover {
   opacity: 0.38;
