@@ -85,6 +85,16 @@ a:focus-visible,
 }
 .brand { display: flex; align-items: center; text-decoration: none; }
 .brand-logo { height: 44px; width: auto; }
+.is-editing .brand { min-width: 0; max-width: calc(100% - 3.25rem); }
+.is-editing .brand-lockup {
+  display: block;
+  height: auto;
+  width: auto;
+  max-height: 4.5rem;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
 .brand-logo--light { display: none; }
 .brand-logo--dark { display: block; }
 
@@ -974,6 +984,7 @@ a:focus-visible,
   .pricing-card--featured:hover { transform: translateY(-2px); }
 }
 @media (max-width: 768px) {
+  .is-editing .brand-lockup { max-height: 3.75rem; }
   .nav-toggle { display: flex; }
   .site-nav {
     position: fixed; top: 0; right: 0; bottom: 0; width: min(280px, 85vw);
