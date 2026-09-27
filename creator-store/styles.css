@@ -1,19 +1,23 @@
-/* Creator Store preview — OTV Forest/Cream (local tokens only) */
+/* Creator Store preview — OTV cyan/dark palette (local tokens; aligned with theme/theme.json) */
 
 :root {
-  --forest: #2e3830;
-  --forest-deep: #232b24;
-  --forest-muted: #3d4a40;
-  --cream: #ebe7df;
-  --cream-warm: #e3ded4;
-  --cream-dark: #d4cfc4;
-  --ink: #1a1f1c;
-  --ink-soft: #4a524c;
-  --ink-muted: #6b736c;
-  --accent: #5c6b5e;
-  --accent-hover: #4a574c;
-  --border: rgba(46, 56, 48, 0.14);
-  --shadow: 0 12px 40px rgba(26, 31, 28, 0.08);
+  --black: #0b0d0f;
+  --charcoal: #181d22;
+  --surface: #1f252b;
+  --muted: #8b939a;
+  --muted-light: #a8b4bc;
+  --cream: #e8eef2;
+  --white: #f7fafc;
+  --cyan: #48d0e8;
+  --cyan-deep: #1ba8c4;
+
+  --ink: var(--cream);
+  --ink-soft: var(--muted-light);
+  --ink-muted: var(--muted);
+  --border: rgba(72, 208, 232, 0.14);
+  --border-strong: rgba(72, 208, 232, 0.28);
+  --shadow: 0 12px 40px rgba(11, 13, 15, 0.45);
+  --glow-cyan: 0 0 28px rgba(72, 208, 232, 0.35);
   --radius: 6px;
   --radius-lg: 12px;
   --font-serif: "Instrument Serif", Georgia, serif;
@@ -37,7 +41,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--ink);
-  background: var(--cream);
+  background: var(--black);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,13 +52,19 @@ img {
 }
 
 a {
-  color: var(--forest);
+  color: var(--cyan);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.15em;
 }
 
 a:hover {
-  color: var(--forest-deep);
+  color: var(--white);
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
 
 .skip-link {
@@ -63,8 +73,8 @@ a:hover {
   top: 0;
   z-index: 100;
   padding: 0.75rem 1rem;
-  background: var(--forest);
-  color: var(--cream);
+  background: var(--cyan);
+  color: var(--black);
 }
 
 .skip-link:focus {
@@ -74,8 +84,8 @@ a:hover {
 
 /* Preview banner */
 .preview-banner {
-  background: var(--forest);
-  color: var(--cream);
+  background: linear-gradient(90deg, var(--cyan-deep), var(--cyan));
+  color: var(--black);
   text-align: center;
   padding: 0.55rem 1rem;
   font-size: 0.8125rem;
@@ -96,7 +106,7 @@ a:hover {
 .site-header {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--border);
-  background: var(--cream);
+  background: var(--charcoal);
 }
 
 .header-inner {
@@ -116,15 +126,15 @@ a:hover {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--ink-muted);
+  color: var(--muted);
 }
 
 /* Hero */
 .hero {
   padding: 4rem 0 3.5rem;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(46, 56, 48, 0.06), transparent),
-    var(--cream);
+    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(72, 208, 232, 0.12), transparent),
+    var(--black);
 }
 
 .hero-eyebrow {
@@ -133,7 +143,7 @@ a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--ink-muted);
+  color: var(--cyan);
 }
 
 .hero h1 {
@@ -142,7 +152,7 @@ a:hover {
   font-size: clamp(2.25rem, 5vw, 3.25rem);
   font-weight: 400;
   line-height: 1.12;
-  color: var(--forest);
+  color: var(--white);
   max-width: 18ch;
 }
 
@@ -151,7 +161,7 @@ a:hover {
   font-family: var(--font-serif);
   font-size: 1.125rem;
   font-style: italic;
-  color: var(--ink-soft);
+  color: var(--muted-light);
   letter-spacing: 0.04em;
 }
 
@@ -169,8 +179,8 @@ a:hover {
   margin: 0;
   padding: 0.5rem 0.875rem;
   font-size: 0.8125rem;
-  color: var(--ink-muted);
-  background: var(--cream-warm);
+  color: var(--muted-light);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
@@ -181,7 +191,7 @@ a:hover {
 }
 
 .section--alt {
-  background: var(--cream-warm);
+  background: var(--charcoal);
   border-block: 1px solid var(--border);
 }
 
@@ -191,7 +201,7 @@ a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--ink-muted);
+  color: var(--cyan);
 }
 
 .section h2 {
@@ -199,7 +209,7 @@ a:hover {
   font-family: var(--font-serif);
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 400;
-  color: var(--forest);
+  color: var(--white);
 }
 
 .section-intro {
@@ -218,26 +228,27 @@ a:hover {
 .product-card {
   display: flex;
   flex-direction: column;
-  background: var(--cream);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .section--alt .product-card {
-  background: var(--cream);
+  background: var(--surface);
 }
 
 .product-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 48px rgba(26, 31, 28, 0.1);
+  border-color: var(--border-strong);
+  box-shadow: 0 16px 48px rgba(11, 13, 15, 0.55), var(--glow-cyan);
 }
 
 .product-thumb {
   aspect-ratio: 4 / 3;
-  background: linear-gradient(145deg, var(--forest-muted) 0%, var(--forest) 100%);
+  background: linear-gradient(145deg, var(--charcoal) 0%, var(--surface) 55%, rgba(27, 168, 196, 0.35) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,12 +267,12 @@ a:hover {
   font-family: var(--font-serif);
   font-size: 2.5rem;
   font-style: italic;
-  color: rgba(235, 231, 223, 0.35);
+  color: rgba(72, 208, 232, 0.28);
   user-select: none;
 }
 
 .product-card--free .product-thumb {
-  background: linear-gradient(145deg, #4a574c 0%, var(--forest-muted) 100%);
+  background: linear-gradient(145deg, var(--cyan-deep) 0%, var(--charcoal) 60%, var(--surface) 100%);
 }
 
 .product-badge {
@@ -274,13 +285,15 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   border-radius: 3px;
-  background: rgba(235, 231, 223, 0.92);
-  color: var(--forest);
+  background: rgba(31, 37, 43, 0.92);
+  color: var(--cyan);
+  border: 1px solid var(--border);
 }
 
 .product-badge--free {
-  background: var(--cream);
-  color: var(--forest);
+  background: rgba(72, 208, 232, 0.15);
+  color: var(--cyan);
+  border-color: var(--border-strong);
 }
 
 .product-body {
@@ -295,7 +308,7 @@ a:hover {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 400;
-  color: var(--forest);
+  color: var(--white);
 }
 
 .product-blurb {
@@ -316,18 +329,18 @@ a:hover {
 .product-price {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: var(--forest);
+  color: var(--cyan);
 }
 
 .product-price--preview {
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--ink-muted);
+  color: var(--muted);
 }
 
 .product-price--preview span {
   font-weight: 600;
-  color: var(--forest);
+  color: var(--white);
 }
 
 /* Buttons */
@@ -345,28 +358,30 @@ a:hover {
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary {
-  background: var(--forest);
-  color: var(--cream);
+  background: var(--cyan);
+  color: var(--black);
+  box-shadow: var(--glow-cyan);
 }
 
 .btn-primary:hover {
-  background: var(--forest-deep);
-  color: var(--cream);
+  background: var(--cyan-deep);
+  color: var(--white);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--forest);
-  border: 1.5px solid var(--forest);
+  color: var(--cyan);
+  border: 1.5px solid var(--cyan);
 }
 
 .btn-secondary:hover {
-  background: var(--forest);
-  color: var(--cream);
+  background: var(--cyan);
+  color: var(--black);
+  box-shadow: var(--glow-cyan);
 }
 
 .btn-block {
@@ -386,7 +401,7 @@ a:hover {
   font-family: var(--font-serif);
   font-size: 1.125rem;
   font-weight: 400;
-  color: var(--forest);
+  color: var(--white);
 }
 
 .step p {
@@ -404,9 +419,10 @@ a:hover {
   margin-bottom: 0.75rem;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--cream);
-  background: var(--forest);
+  color: var(--black);
+  background: var(--cyan);
   border-radius: 50%;
+  box-shadow: var(--glow-cyan);
 }
 
 .fulfillment-note {
@@ -414,20 +430,21 @@ a:hover {
   padding: 1.25rem 1.5rem;
   font-size: 0.9375rem;
   color: var(--ink-soft);
-  background: var(--cream);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
 }
 
 .fulfillment-note strong {
-  color: var(--forest);
+  color: var(--cyan);
 }
 
 /* Footer */
 .site-footer {
   padding: 2.5rem 0;
-  background: var(--forest);
+  background: var(--charcoal);
   color: var(--cream);
+  border-top: 1px solid var(--border);
 }
 
 .footer-inner {
@@ -450,9 +467,21 @@ a:hover {
   margin-inline: auto;
 }
 
+.footer-disclaimer code {
+  font-size: 0.875em;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  background: rgba(72, 208, 232, 0.1);
+  color: var(--cyan);
+}
+
 .footer-inner a {
-  color: var(--cream);
+  color: var(--cyan);
   text-decoration: underline;
+}
+
+.footer-inner a:hover {
+  color: var(--white);
 }
 
 /* Modal */
@@ -464,7 +493,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(26, 31, 28, 0.55);
+  background: rgba(11, 13, 15, 0.72);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.25s ease, visibility 0.25s ease;
@@ -478,9 +507,10 @@ a:hover {
 .modal {
   width: min(100%, 420px);
   padding: 2rem;
-  background: var(--cream);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  box-shadow: 0 24px 64px rgba(26, 31, 28, 0.2);
+  box-shadow: 0 24px 64px rgba(11, 13, 15, 0.55), var(--glow-cyan);
   transform: translateY(12px);
   transition: transform 0.25s ease;
 }
@@ -494,7 +524,7 @@ a:hover {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--forest);
+  color: var(--white);
 }
 
 .modal p {
