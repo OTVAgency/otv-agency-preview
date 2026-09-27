@@ -10,7 +10,9 @@ After push + Pages setup, the live URL is:
 
 `https://otvagency.github.io/otv-agency-preview/`
 
-Local preview: `python3 -m http.server 8899` → [index.html](index.html) or [intake.html](intake.html).
+**Creator Store preview:** `https://otvagency.github.io/otv-agency-preview/creator-store/` — static storefront mock (Big Cory pilot); preview only, no checkout.
+
+Local preview: `python3 -m http.server 8899` → [index.html](index.html), [intake.html](intake.html), or [creator-store/index.html](creator-store/index.html).
 
 ## What's included
 
