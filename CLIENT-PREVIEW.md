@@ -7,7 +7,10 @@ Shareable static preview of the OTV Agency relaunch landing page — no local se
 ```
 https://otvagency.github.io/otv-agency-preview/
 https://otvagency.github.io/otv-agency-preview/intake.html
+https://otvagency.github.io/otv-agency-preview/creator-store/
 ```
+
+**Creator Store preview** (`creator-store/`) — static, internal-only storefront mock for the Big Cory pilot; not live commerce.
 
 Repo: [github.com/OTVAgency/otv-agency-preview](https://github.com/OTVAgency/otv-agency-preview)
 
