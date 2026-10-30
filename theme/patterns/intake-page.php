@@ -33,3 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</div>
 </section>
+
+<?php if ( shortcode_exists( 'wpforms' ) ) : ?>
+<section class="section intake-inquiry" id="inquiry"><div class="container"><h2><?php esc_html_e( 'New project? Send an inquiry.', 'otv-agency' ); ?></h2><?php echo do_shortcode( '[wpforms id="1503" title="false"]' ); ?></div></section>
+<?php endif; ?>

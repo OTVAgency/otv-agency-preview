@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<p class="footer-tagline"><?php esc_html_e( 'Small-town heart, big-agency vision.', 'otv-agency' ); ?></p>
 		</div>
 		<nav class="footer-nav" aria-label="<?php esc_attr_e( 'Footer', 'otv-agency' ); ?>">
+			<a href="<?php echo esc_url( otv_agency_section_url( 'work' ) ); ?>"><?php esc_html_e( 'Work', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'services' ) ); ?>"><?php esc_html_e( 'Services', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'pricing' ) ); ?>"><?php esc_html_e( 'Pricing', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'about' ) ); ?>"><?php esc_html_e( 'About', 'otv-agency' ); ?></a>
@@ -24,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</nav>
 		<div class="footer-meta">
 			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php esc_html_e( 'On The Verge LLC d/b/a OTV Agency. All rights reserved.', 'otv-agency' ); ?></p>
-			<p class="footer-note"><?php esc_html_e( 'Full portfolio and case studies launching soon.', 'otv-agency' ); ?></p>
+			<p class="footer-note"><?php esc_html_e( 'See our work above, or start a project at /intake/.', 'otv-agency' ); ?></p>
 		</div>
 	</div>
 </footer>
