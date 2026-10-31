@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OTV_AGENCY_VERSION', '1.1.1' );
+define( 'OTV_AGENCY_VERSION', '1.3.2' );
 define( 'OTV_AGENCY_INTAKE_FORM', 'https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L' );
 
 /**
@@ -108,6 +108,21 @@ function otv_agency_enqueue_assets() {
 		true
 	);
 
+	wp_enqueue_style(
+		'otv-agency-portfolio',
+		$theme_uri . '/assets/portfolio-preview/portfolio.css',
+		array( 'otv-agency-main' ),
+		OTV_AGENCY_VERSION
+	);
+
+	wp_enqueue_script(
+		'otv-agency-portfolio',
+		$theme_uri . '/assets/portfolio-preview/portfolio.js',
+		array(),
+		OTV_AGENCY_VERSION,
+		true
+	);
+
 	wp_enqueue_script(
 		'clickup-forms-embed',
 		'https://app-cdn.clickup.com/assets/js/forms-embed/embed-form-v1.js',
@@ -124,7 +139,6 @@ add_action( 'wp_enqueue_scripts', 'otv_agency_enqueue_assets' );
 function otv_agency_favicon() {
 	$uri = get_template_directory_uri();
 	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon.svg' ) . '" type="image/svg+xml">' . "\n";
-	echo '<meta name="description" content="' . esc_attr__( 'OTV Agency — creative work and systems that turn content into customers.', 'otv-agency' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'otv_agency_favicon', 1 );
 
@@ -237,3 +251,4 @@ function otv_agency_register_block_patterns() {
 	}
 }
 add_action( 'init', 'otv_agency_register_block_patterns' );
+require_once get_template_directory() . '/inc/seo.php';
