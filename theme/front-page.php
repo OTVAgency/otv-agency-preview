@@ -14,6 +14,7 @@ get_header();
 		'hero',
 		'proof-strip',
 		'services',
+		'portfolio',
 		'testimonial',
 		'pricing',
 		'about',

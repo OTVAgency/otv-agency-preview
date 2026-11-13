@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<span></span><span></span><span></span>
 		</button>
 		<nav id="site-nav" class="site-nav" aria-label="<?php esc_attr_e( 'Primary', 'otv-agency' ); ?>">
+			<a href="<?php echo esc_url( otv_agency_section_url( 'work' ) ); ?>"><?php esc_html_e( 'Work', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'services' ) ); ?>"><?php esc_html_e( 'Services', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'pricing' ) ); ?>"><?php esc_html_e( 'Pricing', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'about' ) ); ?>"><?php esc_html_e( 'About', 'otv-agency' ); ?></a>
