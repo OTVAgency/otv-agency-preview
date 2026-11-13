@@ -25,7 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</nav>
 		<div class="footer-meta">
 			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php esc_html_e( 'On The Verge LLC d/b/a OTV Agency. All rights reserved.', 'otv-agency' ); ?></p>
-			<p class="footer-note"><?php esc_html_e( 'See our work above, or start a project at /intake/.', 'otv-agency' ); ?></p>
+			<p class="footer-note"><?php
+				esc_html_e( 'See our work above, or ', 'otv-agency' );
+				?><a href="<?php echo esc_url( otv_agency_section_url( 'contact' ) ); ?>"><?php esc_html_e( 'start a project', 'otv-agency' ); ?></a>.</p>
 		</div>
 	</div>
 </footer>
