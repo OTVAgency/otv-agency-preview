@@ -13,10 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <footer class="site-footer">
 	<div class="container footer-inner">
 		<div class="footer-brand">
-			<img src="<?php echo esc_url( $uri ); ?>/assets/images/logos/OTV.Agency_Stacked_Logo_V4.svg" alt="OTV Agency" width="120" height="120">
+			<img src="<?php echo esc_url( $uri ); ?>/assets/images/logos/OTV-Agency-Horizontal.png" alt="OTV Agency" class="footer-logo footer-logo-light" width="180" height="70">
+			<img src="<?php echo esc_url( $uri ); ?>/assets/images/logos/OTV-Agency-HorizontalWHT.png" alt="" class="footer-logo footer-logo-dark" width="180" height="70" aria-hidden="true">
 			<p class="footer-tagline"><?php esc_html_e( 'Small-town heart, big-agency vision.', 'otv-agency' ); ?></p>
 		</div>
 		<nav class="footer-nav" aria-label="<?php esc_attr_e( 'Footer', 'otv-agency' ); ?>">
+			<a href="<?php echo esc_url( otv_agency_section_url( 'work' ) ); ?>"><?php esc_html_e( 'Work', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'services' ) ); ?>"><?php esc_html_e( 'Services', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'pricing' ) ); ?>"><?php esc_html_e( 'Pricing', 'otv-agency' ); ?></a>
 			<a href="<?php echo esc_url( otv_agency_section_url( 'about' ) ); ?>"><?php esc_html_e( 'About', 'otv-agency' ); ?></a>
@@ -24,7 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</nav>
 		<div class="footer-meta">
 			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php esc_html_e( 'On The Verge LLC d/b/a OTV Agency. All rights reserved.', 'otv-agency' ); ?></p>
-			<p class="footer-note"><?php esc_html_e( 'Full portfolio and case studies launching soon.', 'otv-agency' ); ?></p>
+			<p class="footer-note"><?php
+				esc_html_e( 'See our work above, or ', 'otv-agency' );
+				?><a href="<?php echo esc_url( otv_agency_section_url( 'contact' ) ); ?>"><?php esc_html_e( 'start a project', 'otv-agency' ); ?></a>.</p>
 		</div>
 	</div>
 </footer>

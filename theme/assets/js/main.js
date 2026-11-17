@@ -51,4 +51,27 @@
       el.classList.add('is-visible');
     });
   }
+
+
+  /* Theme toggle: default light, persist in localStorage */
+  var root = document.documentElement;
+  var toggle = document.querySelector('[data-theme-toggle]');
+  function applyTheme(theme) {
+    var isDark = theme === 'dark';
+    root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    root.classList.toggle('otv-theme-dark', isDark);
+    try { localStorage.setItem('otv-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    if (toggle) {
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('otv-theme'); } catch (e) {}
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  }
 })();

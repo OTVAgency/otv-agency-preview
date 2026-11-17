@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OTV_AGENCY_VERSION', '1.1.1' );
+define( 'OTV_AGENCY_VERSION', '1.3.5' );
 define( 'OTV_AGENCY_INTAKE_FORM', 'https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L' );
 
 /**
@@ -19,10 +19,11 @@ define( 'OTV_AGENCY_INTAKE_FORM', 'https://forms.clickup.com/9014644998/f/8cn148
  */
 function otv_agency_intake_url() {
 	$page = get_page_by_path( 'intake' );
-	if ( $page instanceof WP_Post ) {
+	if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
 		return get_permalink( $page );
 	}
-	return home_url( '/intake/' );
+	// Draft/private intake pages must not be linked (they render as ?page_id=… and 401 for visitors).
+	return otv_agency_section_url( 'contact' );
 }
 
 /**
@@ -108,23 +109,88 @@ function otv_agency_enqueue_assets() {
 		true
 	);
 
+	wp_enqueue_style(
+		'otv-agency-portfolio',
+		$theme_uri . '/assets/portfolio-preview/portfolio.css',
+		array( 'otv-agency-main' ),
+		OTV_AGENCY_VERSION
+	);
+
 	wp_enqueue_script(
-		'clickup-forms-embed',
-		'https://app-cdn.clickup.com/assets/js/forms-embed/embed-form-v1.js',
+		'otv-agency-portfolio',
+		$theme_uri . '/assets/portfolio-preview/portfolio.js',
 		array(),
-		null,
+		OTV_AGENCY_VERSION,
 		true
 	);
+
+	if ( is_page( 'intake' ) ) {
+		wp_enqueue_script(
+			'clickup-forms-embed',
+			'https://app-cdn.clickup.com/assets/js/forms-embed/embed-form-v1.js',
+			array(),
+			null,
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'otv_agency_enqueue_assets' );
 
 /**
- * Output favicon link tags.
+ * Do not load WooCommerce storefront assets on the marketing homepage.
+ */
+function otv_agency_trim_front_assets() {
+	if ( ! is_front_page() && ! is_page( 'intake' ) ) {
+		return;
+	}
+	wp_dequeue_style( 'woocommerce-general' );
+	wp_dequeue_style( 'woocommerce-layout' );
+	wp_dequeue_style( 'woocommerce-smallscreen' );
+	wp_dequeue_script( 'woocommerce' );
+	wp_dequeue_script( 'wc-add-to-cart' );
+	wp_dequeue_script( 'wc-cart-fragments' );
+	wp_dequeue_script( 'wc-order-attribution' );
+	wp_dequeue_script( 'sourcebuster-js' );
+}
+add_action( 'wp_enqueue_scripts', 'otv_agency_trim_front_assets', 100 );
+
+/**
+ * The theme already outputs a skip link. Drop the duplicate block-template one.
+ */
+function otv_agency_remove_duplicate_skip_link() {
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_block_template_skip_link' );
+	remove_action( 'wp_footer', 'the_block_template_skip_link' );
+}
+add_action( 'after_setup_theme', 'otv_agency_remove_duplicate_skip_link', 20 );
+
+/**
+ * Apply saved dark theme before first paint to avoid a flash.
+ */
+function otv_agency_theme_boot() {
+	?>
+<script>
+(function () {
+	try {
+		if (localStorage.getItem('otv-theme') === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			document.documentElement.classList.add('otv-theme-dark');
+		}
+	} catch (e) {}
+})();
+</script>
+	<?php
+}
+add_action( 'wp_head', 'otv_agency_theme_boot', 0 );
+
+/**
+ * Output favicon link tags (official flat V, light and dark).
  */
 function otv_agency_favicon() {
 	$uri = get_template_directory_uri();
-	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon.svg' ) . '" type="image/svg+xml">' . "\n";
-	echo '<meta name="description" content="' . esc_attr__( 'OTV Agency — creative work and systems that turn content into customers.', 'otv-agency' ) . '">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon-light.png' ) . '" type="image/png" media="(prefers-color-scheme: light)">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon-dark.png' ) . '" type="image/png" media="(prefers-color-scheme: dark)">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon-light.png' ) . '" type="image/png">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $uri . '/assets/images/apple-touch-icon.png' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'otv_agency_favicon', 1 );
 
@@ -237,3 +303,4 @@ function otv_agency_register_block_patterns() {
 	}
 }
 add_action( 'init', 'otv_agency_register_block_patterns' );
+require_once get_template_directory() . '/inc/seo.php';

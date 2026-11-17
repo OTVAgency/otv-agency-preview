@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <section class="hero">
 	<div class="hero-media" aria-hidden="true">
-		<img src="<?php echo esc_url( $uri ); ?>/assets/images/hero-bg.jpg" alt="">
+		<img src="<?php echo esc_url( $uri ); ?>/assets/images/hero-bg.jpg" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
 	</div>
 	<div class="hero-overlay" aria-hidden="true"></div>
 	<div class="hero-grain" aria-hidden="true"></div>
@@ -28,10 +28,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 				<p class="hero-badge"><?php esc_html_e( 'Remote-friendly · Nationwide', 'otv-agency' ); ?></p>
 			</div>
-			<aside class="hero-offer" aria-label="<?php esc_attr_e( 'Special offer', 'otv-agency' ); ?>">
-				<p class="hero-offer-label"><?php esc_html_e( 'New client offer', 'otv-agency' ); ?></p>
-				<a href="<?php echo esc_url( otv_agency_section_url( 'pricing' ) ); ?>" class="btn btn-primary hero-offer-cta"><?php esc_html_e( 'Claim this offer', 'otv-agency' ); ?></a>
-			</aside>
 		</div>
 	</div>
 </section>
