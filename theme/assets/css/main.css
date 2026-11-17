@@ -129,8 +129,8 @@ a:focus-visible,
   object-fit: contain;
   object-position: left center;
 }
-.brand-logo--light { display: none; }
-.brand-logo--dark { display: block; }
+.brand-logo--light { display: block; } /* dark artwork — light mode / cream surfaces */
+.brand-logo--dark { display: none; } /* white artwork — dark mode only */
 
 .site-nav { display: flex; align-items: center; gap: 1.75rem; }
 .site-nav a {
@@ -142,16 +142,16 @@ a:focus-visible,
 .site-header.is-scrolled .site-nav a:hover { color: var(--cyan-ink); opacity: 1; }
 .nav-cta {
   padding: 0.55rem 1.15rem; border-radius: 999px;
-  background: var(--cyan); color: var(--ink) !important;
+  background: var(--cyan); color: #f5f2ec !important;
   font-weight: 600 !important;
   box-shadow: var(--glow-cyan);
 }
-.nav-cta:hover { background: var(--cyan-ink); color: var(--white) !important; }
+.nav-cta:hover { background: var(--cyan-ink); color: #f5f2ec !important; }
 .site-header.is-scrolled .nav-cta {
-  background: var(--cyan); color: var(--ink) !important;
+  background: var(--cyan); color: #f5f2ec !important;
 }
 .site-header.is-scrolled .nav-cta:hover {
-  background: var(--cyan-ink); color: var(--white) !important;
+  background: var(--cyan-ink); color: #f5f2ec !important;
 }
 
 .nav-toggle {
@@ -565,8 +565,8 @@ a:focus-visible,
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--cyan);
-  color: var(--ink);
+  background: var(--otv-accent);
+  color: #f5f2ec;
   white-space: nowrap;
 }
 .pricing-tier {
@@ -618,8 +618,8 @@ a:focus-visible,
 }
 .pricing-card--featured li::before { background: var(--cyan); }
 .pricing-card--featured .btn-primary {
-  background: var(--cyan);
-  color: var(--ink);
+  background: var(--otv-accent);
+  color: #f5f2ec;
 }
 .pricing-note {
   text-align: center;
@@ -1029,8 +1029,8 @@ a:focus-visible,
     box-shadow: var(--shadow-md);
   }
   .site-nav.is-open { transform: translateX(0); }
-  .site-nav a { color: var(--ink) !important; font-size: 1.0625rem; }
-  .nav-cta { margin-top: 0.5rem; color: var(--ink) !important; }
+  .site-nav a:not(.nav-cta) { color: var(--ink) !important; font-size: 1.0625rem; }
+  .nav-cta { margin-top: 0.5rem; color: #f5f2ec !important; }
   .hero-inner { padding: 7rem 0 4rem; }
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1400,8 +1400,10 @@ a:focus-visible,
 /* 1.3.4 brand pass: logo swap, theme toggle, dark-mode surfaces      */
 /* ------------------------------------------------------------------ */
 
-.brand-logo--light { display: none; } /* dark artwork, for cream/light backgrounds */
-.brand-logo--dark { display: block; } /* white artwork, for hero / dark backgrounds */
+/* Light mode: always the dark lockup (visible on the cream header and cream hero overlay).
+   White lockup only in dark mode, where the hero uses a dark scrim. */
+.brand-logo--light { display: block; }
+.brand-logo--dark { display: none; }
 .site-header.is-scrolled .brand-logo--light { display: block; }
 .site-header.is-scrolled .brand-logo--dark { display: none; }
 [data-theme="dark"] .brand-logo--light,
@@ -1532,4 +1534,100 @@ a:focus-visible,
 }
 @media (max-width: 860px) {
   .theme-toggle { width: 2.75rem; height: 2.75rem; }
+}
+
+
+/* ------------------------------------------------------------------ */
+/* 1.3.5 contrast: dark hero scrim, logo lockup, section surfaces     */
+/* ------------------------------------------------------------------ */
+
+/* Dark-mode hero: guide surface #111d24 as a scrim so cream type meets WCAG AA. */
+[data-theme="dark"] .hero-media img {
+  filter: saturate(0.28) grayscale(0.12) contrast(1.05) brightness(0.5);
+}
+[data-theme="dark"] .hero-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(17, 29, 36, 0.92) 0%,
+    rgba(17, 29, 36, 0.88) 46%,
+    rgba(17, 29, 36, 0.82) 100%
+  );
+}
+[data-theme="dark"] .hero-grain {
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+}
+[data-theme="dark"] .hero-badge {
+  background: rgba(17, 29, 36, 0.55);
+  border-color: rgba(245, 242, 236, 0.4);
+  color: var(--otv-text-secondary);
+}
+[data-theme="dark"] .hero-eyebrow,
+[data-theme="dark"] .hero-lede {
+  color: var(--otv-text-secondary);
+}
+
+/* Unscrolled header sits over the scrim — keep nav cream, not washed out. */
+[data-theme="dark"] .site-header:not(.is-scrolled) {
+  background: linear-gradient(180deg, rgba(17, 29, 36, 0.55) 0%, rgba(17, 29, 36, 0) 100%);
+}
+
+[data-theme="dark"] .proof-strip {
+  background: var(--otv-surface);
+  border-bottom-color: rgba(63, 191, 210, 0.35);
+}
+[data-theme="dark"] .pricing {
+  background: var(--otv-surface);
+}
+[data-theme="dark"] .pricing-card--featured {
+  background: var(--otv-panel);
+  color: var(--otv-text);
+}
+[data-theme="dark"] .pricing-badge {
+  background: #f5f2ec;
+  color: #1a1a18;
+}
+[data-theme="dark"] .service-card:hover {
+  background: var(--otv-panel);
+  border-color: rgba(63, 191, 210, 0.6);
+}
+[data-theme="dark"] .work-thumb,
+[data-theme="dark"] .work-card:hover .work-thumb,
+[data-theme="dark"] .work-thumb--1,
+[data-theme="dark"] .work-thumb--2,
+[data-theme="dark"] .work-thumb--3,
+[data-theme="dark"] .work-thumb--4,
+[data-theme="dark"] .work-thumb--5,
+[data-theme="dark"] .work-thumb--6 {
+  background: var(--otv-surface-alt);
+  border-bottom-color: rgba(63, 191, 210, 0.28);
+}
+[data-theme="dark"] .work-meta h3 { color: var(--otv-heading); }
+
+@media (max-width: 768px) {
+  [data-theme="dark"] .site-nav {
+    background: var(--otv-surface);
+    border-left-color: rgba(63, 191, 210, 0.35);
+  }
+  [data-theme="dark"] .site-nav a.nav-cta {
+    color: #1a1a18 !important;
+  }
+}
+
+[data-theme="dark"] .hero-offer {
+  background: rgba(28, 48, 57, 0.92);
+  border-color: rgba(63, 191, 210, 0.45);
+}
+[data-theme="dark"] .intake-form-embed {
+  background: var(--otv-panel);
+  border-color: rgba(63, 191, 210, 0.35);
+}
+[data-theme="dark"].is-editing .service-example,
+[data-theme="dark"] .is-editing .service-example,
+[data-theme="dark"].is-editing #svc-web:checked ~ .services-grid label[for="svc-web"],
+[data-theme="dark"].is-editing #svc-social:checked ~ .services-grid label[for="svc-social"],
+[data-theme="dark"].is-editing #svc-video:checked ~ .services-grid label[for="svc-video"],
+[data-theme="dark"].is-editing #svc-automation:checked ~ .services-grid label[for="svc-automation"],
+[data-theme="dark"].is-editing #svc-print:checked ~ .services-grid label[for="svc-print"] {
+  background: var(--otv-panel);
 }
