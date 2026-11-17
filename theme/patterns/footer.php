@@ -13,7 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <footer class="site-footer">
 	<div class="container footer-inner">
 		<div class="footer-brand">
-			<img src="<?php echo esc_url( $uri ); ?>/assets/images/logos/OTV.Agency_Stacked_Logo_V4.svg" alt="OTV Agency" width="120" height="120">
+			<img src="<?php echo esc_url( $uri ); ?>/assets/images/logos/OTV-Agency-Horizontal.png" alt="OTV Agency" class="footer-logo footer-logo-light" width="180" height="70">
+			<img src="<?php echo esc_url( $uri ); ?>/assets/images/logos/OTV-Agency-HorizontalWHT.png" alt="" class="footer-logo footer-logo-dark" width="180" height="70" aria-hidden="true">
 			<p class="footer-tagline"><?php esc_html_e( 'Small-town heart, big-agency vision.', 'otv-agency' ); ?></p>
 		</div>
 		<nav class="footer-nav" aria-label="<?php esc_attr_e( 'Footer', 'otv-agency' ); ?>">

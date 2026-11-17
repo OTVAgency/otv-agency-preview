@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OTV_AGENCY_VERSION', '1.3.3' );
+define( 'OTV_AGENCY_VERSION', '1.3.4' );
 define( 'OTV_AGENCY_INTAKE_FORM', 'https://forms.clickup.com/9014644998/f/8cn1486-4294/ST5JF7V1I3S1JQK26L' );
 
 /**
@@ -164,11 +164,33 @@ function otv_agency_remove_duplicate_skip_link() {
 add_action( 'after_setup_theme', 'otv_agency_remove_duplicate_skip_link', 20 );
 
 /**
- * Output favicon link tags.
+ * Apply saved dark theme before first paint to avoid a flash.
+ */
+function otv_agency_theme_boot() {
+	?>
+<script>
+(function () {
+	try {
+		if (localStorage.getItem('otv-theme') === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			document.documentElement.classList.add('otv-theme-dark');
+		}
+	} catch (e) {}
+})();
+</script>
+	<?php
+}
+add_action( 'wp_head', 'otv_agency_theme_boot', 0 );
+
+/**
+ * Output favicon link tags (official flat V, light and dark).
  */
 function otv_agency_favicon() {
 	$uri = get_template_directory_uri();
-	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon.svg' ) . '" type="image/svg+xml">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon-light.png' ) . '" type="image/png" media="(prefers-color-scheme: light)">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon-dark.png' ) . '" type="image/png" media="(prefers-color-scheme: dark)">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $uri . '/assets/images/favicon-light.png' ) . '" type="image/png">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $uri . '/assets/images/apple-touch-icon.png' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'otv_agency_favicon', 1 );
 
